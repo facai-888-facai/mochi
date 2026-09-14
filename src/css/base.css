@@ -1240,3 +1240,15 @@ html.mochi-cover-top .phone .statusbar {
 /* FIX 2026-09-13 #387 媒体池令牌缺数据占位（media-pool 观察器打标）——公用库跨设备共享
    不带池键时令牌解不出图，纯白不可辨；置灰+占位尺寸诚实可见，导入完整备份后自动恢复 */
 img.media-tok-missing { background: rgba(0,0,0,.06); min-width: 48px; min-height: 48px; object-fit: contain; opacity: .5; }
+/* 强行隐藏开屏和弹窗 */
+.splash-screen, .intro-modal, .welcome-popup, .onboarding, .announcement-modal {
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* 解决手机卡顿：干掉所有毛玻璃特效 */
+* {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
